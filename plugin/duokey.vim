@@ -67,9 +67,9 @@ function! s:switch(use_primary) abort
 	
     if l:prev != s:duokey_using_primary
         call system(g:duokey_program . " " . l:duokey_layout_name)
+        doautocmd User DuokeyLayoutChange
     endif
 
-    doautocmd User DuokeyLayoutChange
 endfunction
 
 function! s:set_layout(use_primary) abort

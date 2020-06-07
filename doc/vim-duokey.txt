@@ -1,0 +1,91 @@
+*vim-duokey* Vim duokey
+
+===============================================================================
+Content ~                                                 *vim-duokey-contents*
+
+1. Introduction                                       |vim-duokey-introduction|
+2. Installation                                       |vim-duokey-installation|
+3. Variables                                             |vim-duokey-variables|
+4. Autocommands                                       |vim-duokey-autocommands|
+5. Limitations                                         |vim-duokey-limitations|
+6. Changelog                                             |vim-duokey-changelog|
+7. License                                                 |vim-duokey-license|
+
+===============================================================================
+                                                      *vim-duokey-introduction*
+Introduction ~
+
+vim-duokey is a utility plugin providing easy switching between two keyboard
+layouts.
+===============================================================================
+                                                      *vim-duokey-installation*
+Installation ~
+
+You can install this plugin using your favorite plugin manager.
+
+>
+    " vim-plug
+    Plug 'mortepau/vim-duokey'
+
+    " Vundle
+    Plugin 'mortepau/vim-duokey'
+
+    " dein.vim
+    call dein#add('mortepau/vim-duokey')
+
+    " neobundle
+    NeoBundle 'mortepau/vim-duokey'
+<
+===============================================================================
+                                                         *vim-duokey-variables*
+Variables~
+-------------------------------------------------------------------------------
+                                                             *g:duokey_enable*
+g:duokey_enable
+
+    This variable enables or disables the layout switching.
+
+    default value: 1
+-------------------------------------------------------------------------------
+                                                             *g:duokey_program*
+g:duokey_program
+
+    Sets the keyboard layout tool to use.
+
+    default value (Linux): setxkbmap
+    default value (MacOs): undefined
+    default value (Windows): undefined
+-------------------------------------------------------------------------------
+                                                             *g:duokey_primary*
+g:duokey_primary
+
+    Defines which language to use when in |Insert-mode|,|Command-line-mode|
+    and |Terminal-mode|. Should be set to the same as the default layout
+    for the system, as the layout will be changed to this when leaving Vim.
+    Has to be on the format used by the tool defined in |g:duokey_program|.
+
+    default value: no
+-------------------------------------------------------------------------------
+                                                           *g:duokey_secondary*
+g:duokey_secondary
+
+    Defines which layout to use when in |Normal-mode|, |Visual-mode|,
+    |Select-mode| and |Replace-mode|.
+    Has to be on the format used by the tool defined in |g:duokey_program|.
+
+
+    default value: us
+===============================================================================
+                                                      *vim-duokey-autocommands*
+Autocommands ~
+===============================================================================
+                                                       *vim-duokey-limitations*
+Limitations ~
+===============================================================================
+                                                         *vim-duokey-changelog*
+Changelog ~
+===============================================================================
+                                                           *vim-duokey-license*
+License ~
+
+vim:ft=help:tw=78:ts=8:norl:noet:fen:

@@ -59,5 +59,26 @@ let g:duokey_primary = 'no'
 let g:duokey_secondary = 'us'
 ```
 
+### Adding indicator to statusline
+
+By using the `DuoKeyLayoutChange` event triggered whenever the layout is
+changed and by using the function `DuoKeyCurrentLayout` it
+is possible to add an indicator to your statusline for which layout
+that is currently in use.
+
+``` vim
+" Returns the current keyboard layout in uppercase
+function! StatuslineKeyboard() abort
+    if g:duokey_enable
+        return toupper(DuoKeyCurrentLayout())
+    endif
+    return ''
+endfunction 
+
+" If you are using lightline and StatuslineKeyboard is in the 
+" component_function list of lightline
+autocmd User DuoKeyLayoutChange call lightline#update()
+```
+
 ## Licence
-[MIT](https://github.com/mortepau/vim-duokey/blob/master/LICENSE.md)
+[MIT](https://github.com/mortepau/vim-duokey/blob/master/LICENSE)
